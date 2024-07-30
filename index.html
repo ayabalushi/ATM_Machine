@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <title>ATM Machine</title>
+</head>
+<body>
+    <!-- Login Section -->
+    <div class="container" id="loginSection">
+        <h1>ATM Machine</h1>
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p id="loginMessage" class="message"></p>
+        </form>
+    </div>
+    
+    <!-- Banking Section (hidden initially) -->
+    <div class="container hidden" id="bankingSection">
+        <h2 id="bankingHeading">Choose your operation</h2>
+        <form id="bankingForm">
+            <!-- Operation Selection -->
+            <div class="form-group">
+                <label for="operation">Select operation:</label>
+                <select id="operation" required>
+                    <option value="">Select...</option>
+                    <option value="1">Withdraw</option>
+                    <option value="2">Deposit</option>
+                    <option value="3">Transfer</option>
+                </select>
+            </div>
+
+            <!-- Withdraw Section (hidden initially) -->
+            <div id="withdrawSection" class="form-section hidden">
+                <div class="form-group">
+                    <label for="withdrawAmount">Amount to withdraw:</label>
+                    <input type="number" id="withdrawAmount" min="1">
+                </div>
+                <button type="button" id="withdrawButton">Withdraw</button>
+            </div>
+
+            <!-- Deposit Section (hidden initially) -->
+            <div id="depositSection" class="form-section hidden">
+                <div class="form-group">
+                    <label for="depositAmount">Amount to deposit:</label>
+                    <input type="number" id="depositAmount" min="1">
+                </div>
+                <button type="button" id="depositButton">Deposit</button>
+            </div>
+
+            <!-- Transfer Section (hidden initially) -->
+            <div id="transferSection" class="form-section hidden">
+                <div class="form-group">
+                    <label for="transferAmount">Amount to transfer:</label>
+                    <input type="number" id="transferAmount" min="1">
+                </div>
+                <div class="form-group">
+                    <label for="accountID">Destination Account ID:</label>
+                    <input type="number" id="accountID" min="1">
+                </div>
+                <button type="button" id="transferButton">Transfer</button>
+            </div>
+        </form>
+        <p id="bankingMessage" class="message"></p>
+    </div>
+
+    <script src="static/js/index.js"></script>
+</body>
+</html>
